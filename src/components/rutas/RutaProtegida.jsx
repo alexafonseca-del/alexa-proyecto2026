@@ -1,15 +1,12 @@
-import React from "react";
+﻿import React from "react";
 import { Navigate } from "react-router-dom";
 
-const RutaProtegida = ({ children }) => {
-    // Verifica si el usuario está autenticado usando localStorage
-    const estaLogueado = !!localStorage.getItem("usuario-supabase");
+const RutaProtregida = ({ children }) => {
 
-    // Log para depuración
-    console.log("Usuario autenticado:", estaLogueado);
+  const estaLogeado= !! localStorage.getItem("usuario-supabase");
 
-    // Si está autenticado, muestra el contenido; si no, redirige al login
-    return estaLogueado ? children : <Navigate to="/login" replace />;
+  console.log("usario Autenticado", estaLogeado);
+    return estaLogeado ? children : <Navigate to="/login" replace />;
 };
 
-export default RutaProtegida;
+export default RutaProtregida;
